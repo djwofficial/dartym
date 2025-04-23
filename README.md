@@ -46,7 +46,7 @@ Because this lab has no visible changes in the app itself, so we'll went through
 
 
 # Deadline
-Submit your work before 2025/04/25 (Thur.) 17:20:00.
+Submit your work before 2025/04/24 (Thur.) 17:20:00.
 
 The score you have done will be 100%.
 
