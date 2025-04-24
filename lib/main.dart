@@ -3,6 +3,7 @@ import 'package:flutter_app/data/dummy_data.dart';
 import 'package:flutter_app/models/meal.dart';
 import 'package:flutter_app/services/navigation.dart';
 import 'package:flutter_app/state/favorite_meals_notifier.dart';
+import 'package:flutter_app/state/filtered_meals_notifier.dart';
 import 'package:flutter_app/state/filters_notifier.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -29,6 +30,11 @@ void main() {
         ChangeNotifierProvider<FiltersNotifier>(
             create: (_) => FiltersNotifier()),
         // hint: maybe add the filtered_meals_notifier here?
+        ChangeNotifierProxyProvider2<List<Meal>, FiltersNotifier, FilteredMealsNotifier>(
+          create: (_) => FilteredMealsNotifier(),
+          update: (_, meals, filters, previousFilteredMeals) =>
+            previousFilteredMeals!..updateFilteredMeals(meals, filters.filters),
+        )
       ],
       child: const App(),
     ),

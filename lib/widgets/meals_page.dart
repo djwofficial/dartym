@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/data/dummy_data.dart';
 import 'package:flutter_app/models/meal.dart';
 import 'package:flutter_app/services/navigation.dart';
+import 'package:flutter_app/state/filtered_meals_notifier.dart';
 import 'package:flutter_app/state/filters_notifier.dart';
 import 'package:flutter_app/widgets/meals.dart';
 import 'package:provider/provider.dart';
@@ -22,26 +23,29 @@ class MealsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final category = dummyCategories[categoryId]!;
-    List<Meal> allMeals = Provider.of<List<Meal>>(context);
-    Map<Filter, bool> activeFilters =
-        Provider.of<FiltersNotifier>(context).filters;
+    // List<Meal> allMeals = Provider.of<List<Meal>>(context);
+    // Map<Filter, bool> activeFilters =
+    //     Provider.of<FiltersNotifier>(context).filters;
 
-    //todo:  get filteredMeals from a provider    
-    List<Meal> filteredMeals = allMeals.where((meal) {
-      if (activeFilters[Filter.glutenFree]! && !meal.isGlutenFree) {
-        return false;
-      }
-      if (activeFilters[Filter.lactoseFree]! && !meal.isLactoseFree) {
-        return false;
-      }
-      if (activeFilters[Filter.vegetarian]! && !meal.isVegetarian) {
-        return false;
-      }
-      if (activeFilters[Filter.vegan]! && !meal.isVegan) {
-        return false;
-      }
-      return true;
-    }).toList();
+    // //todo:  get filteredMeals from a provider    
+    // List<Meal> filteredMeals = allMeals.where((meal) {
+    //   if (activeFilters[Filter.glutenFree]! && !meal.isGlutenFree) {
+    //     return false;
+    //   }
+    //   if (activeFilters[Filter.lactoseFree]! && !meal.isLactoseFree) {
+    //     return false;
+    //   }
+    //   if (activeFilters[Filter.vegetarian]! && !meal.isVegetarian) {
+    //     return false;
+    //   }
+    //   if (activeFilters[Filter.vegan]! && !meal.isVegan) {
+    //     return false;
+    //   }
+    //   return true;
+    // }).toList();
+
+    final filteredMeals = Provider.of<FilteredMealsNotifier>(context).filteredMeals;
+
     final meals = filteredMeals
         .where((meal) => meal.categories.contains(category.id))
         .toList();
