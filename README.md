@@ -1,8 +1,8 @@
 # Lab 07 Meals app with ProxyProvider
 
-During this lab session, you will need to **implement a ChangeNotifierProxyProvider2** globally and listen to a **FilteredMealsNotifier**, if implemented correctly, the **MealePage** can acquire the **filteredmeals** list from the provider directly, instead of re-computeing filteredMeals in every calling of it's build function.  
+During this lab session, you will need to **implement a ChangeNotifierProxyProvider2** globally and listen to a **FilteredMealsNotifier**, if implemented correctly, the **MealsPage** can acquire the **filteredmeals** list from the provider directly, instead of re-computeing filteredMeals in every calling of it's build function.  
 
-The lab project (courses > software-studio > 2024-spring > lab-flutter-basics-dart-meals-app) provides the meals app before implementing the proxyProvider.
+The lab project (courses > software-studio > 2025-spring > lab-flutter-basics-dart-meals-app) provides the meals app before implementing the proxyProvider.
 
 
 # Description
