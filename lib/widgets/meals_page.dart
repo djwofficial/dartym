@@ -3,7 +3,6 @@ import 'package:flutter_app/data/dummy_data.dart';
 import 'package:flutter_app/models/meal.dart';
 import 'package:flutter_app/services/navigation.dart';
 import 'package:flutter_app/state/filtered_meals_notifier.dart';
-import 'package:flutter_app/state/filters_notifier.dart';
 import 'package:flutter_app/widgets/meals.dart';
 import 'package:provider/provider.dart';
 
@@ -27,7 +26,7 @@ class MealsPage extends StatelessWidget {
     // Map<Filter, bool> activeFilters =
     //     Provider.of<FiltersNotifier>(context).filters;
 
-    // //todo:  get filteredMeals from a provider    
+    // //todo:  get filteredMeals from a provider
     // List<Meal> filteredMeals = allMeals.where((meal) {
     //   if (activeFilters[Filter.glutenFree]! && !meal.isGlutenFree) {
     //     return false;
@@ -44,7 +43,8 @@ class MealsPage extends StatelessWidget {
     //   return true;
     // }).toList();
 
-    final filteredMeals = Provider.of<FilteredMealsNotifier>(context).filteredMeals;
+    final filteredMeals =
+        Provider.of<FilteredMealsNotifier>(context).filteredMeals;
 
     final meals = filteredMeals
         .where((meal) => meal.categories.contains(category.id))

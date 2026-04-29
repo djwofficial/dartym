@@ -157,9 +157,8 @@ class _MealDetailsPageState extends State<MealDetailsPage> {
                                 .textTheme
                                 .bodyMedium!
                                 .copyWith(
-                                  color: Theme.of(context)
-                                      .colorScheme
-                                      .onBackground,
+                                  color:
+                                      Theme.of(context).colorScheme.onSurface,
                                 ),
                           ),
                         const SizedBox(height: 24),
@@ -181,9 +180,8 @@ class _MealDetailsPageState extends State<MealDetailsPage> {
                                 .textTheme
                                 .bodyMedium!
                                 .copyWith(
-                                  color: Theme.of(context)
-                                      .colorScheme
-                                      .onBackground,
+                                  color:
+                                      Theme.of(context).colorScheme.onSurface,
                                 ),
                           ),
                       ],
